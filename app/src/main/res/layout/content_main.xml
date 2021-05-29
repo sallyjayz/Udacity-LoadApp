@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <ImageView
+        android:id="@+id/image_download"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="16dp"
+        app:srcCompat="@drawable/download_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rg_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/image_download"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp">
+
+        <RadioButton
+            android:id="@+id/glide_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:text="@string/glide"
+            android:textSize="@dimen/default_text_size"
+            android:onClick="onRadioClicked"/>
+
+        <RadioButton
+            android:id="@+id/load_app_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:text="@string/load_app"
+            android:textSize="@dimen/default_text_size"
+            android:onClick="onRadioClicked"/>
+
+        <RadioButton
+            android:id="@+id/option_retrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:text="@string/retrofit"
+            android:textSize="@dimen/default_text_size"
+            android:onClick="onRadioClicked"/>
+
+    </RadioGroup>
+
+
+
+    <com.sallyjayz.loadapp.LoadingButton
+        android:id="@+id/custom_button"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/loading_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:backgroundColor = "@color/teal_200"
+        app:downloadingBackgroundColor="@color/teal_700"
+        app:circleColor = "@android:color/holo_orange_light"
+        app:text = "Download"
+        app:downloadText = "@string/button_loading"
+        app:textColor = "@color/white"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
